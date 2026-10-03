@@ -1,1 +1,1 @@
-/3d/main.lua,0,
+/haco8stage1/main.lua,0,

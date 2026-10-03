@@ -7,7 +7,7 @@
 
 #include "M5Cardputer.h"
 
-#include "SPIFFS.h"
+#include "LittleFS.h"
 #include "baseGame.h"
 
 // #include "Editor.h"

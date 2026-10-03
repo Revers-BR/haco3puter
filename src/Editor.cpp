@@ -727,7 +727,7 @@ void Editor::editorUpdateRow(erow *row) {
 }
 
 void Editor::getCursorConfig(String _wrfile) {
-  File fr = SPIFFS.open(_wrfile, "r");
+  File fr = LittleFS.open(_wrfile, "r");
   String line;
   while (fr.available()) {
     line = fr.readStringUntil('\n');
@@ -791,7 +791,7 @@ void Editor::setCursorConfig(int _cx, int _cy, int _rx) {
   Serial.println(E.rx);
   
   String writeStr = numStr;  // 書き込み文字列を設定
-  File fw = SPIFFS.open("/init/param/editor.txt", "w"); // ファイルを書き込みモードで開く
+  File fw = LittleFS.open("/init/param/editor.txt", "w"); // ファイルを書き込みモードで開く
   fw.println(writeStr);  // ファイルに書き込み
   delay(50);
   fw.close(); // ファイルを閉じる
@@ -812,7 +812,7 @@ void Editor::setCursorConfig() {
   Serial.println(E.rx);
   
   String writeStr = numStr;  // 書き込み文字列を設定
-  File fw = SPIFFS.open("/init/param/editor.txt", "w"); // ファイルを書き込みモードで開く
+  File fw = LittleFS.open("/init/param/editor.txt", "w"); // ファイルを書き込みモードで開く
   fw.println(writeStr);  // ファイルに書き込み
   delay(50);
   fw.close(); // ファイルを閉じる

@@ -252,7 +252,7 @@
 
 //   pinMode(SPEAKER_PIN, OUTPUT);
 
-//   File fr = SPIFFS.open("/init/sound/wave_sfx.txt", "r");// ⑩波形ファイル（256*256）を読み込みモードで開く
+//   File fr = LittleFS.open("/init/sound/wave_sfx.txt", "r");// ⑩波形ファイル（256*256）を読み込みモードで開く
 //   for (int j = 0; j < SFXNUM; j++) {
 //     for (int i = 0; i < 256; i++) {
 //       String _readStr = fr.readStringUntil(',');// カンマまで１行読み出
@@ -262,7 +262,7 @@
 //   }
 //   fr.close();	// ⑫	ファイルを閉じる
 
-//   fr = SPIFFS.open("/init/sound/wave.txt", "r");// ⑩波形ファイル（256*256）を読み込みモードで開く
+//   fr = LittleFS.open("/init/sound/wave.txt", "r");// ⑩波形ファイル（256*256）を読み込みモードで開く
 //   for (int i = 0; i < 256; i++) {
 //     String _readStr = fr.readStringUntil(',');// カンマまで１行読み出し
 //     std::string _readstr = _readStr.c_str();

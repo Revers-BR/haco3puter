@@ -3,7 +3,6 @@
 #define FLICK_DIST 4
 #define HOLDING_SEC 160000
 #define TAP_TO_TAP_SEC 220000
-#define FORMAT_SPIFFS_IF_FAILED true
 #pragma once //インクルードガード
 
 #include <M5GFX.h>
@@ -28,7 +27,7 @@
 #include <chrono>
 #include <thread>
 
-#include <SPIFFS.h>
+#include <LittleFS.h>
 #include "DentaroVector.hpp"
 #include "DentaroPhisics.hpp"
 using namespace std;
@@ -494,7 +493,7 @@ public:
 
   inline void getTilePos(double lat, double lon, int zoom_level);
 
-  inline void drawPngFile(M5Canvas sprite, fs::SPIFFSFS* _SPIFFS,const char * _path, int32_t _x, int32_t _y);
+  inline void drawPngFile(M5Canvas sprite, fs::LittleFSFS* _LittleFS,const char * _path, int32_t _x, int32_t _y);
 
 };
 
@@ -519,8 +518,8 @@ inline void M5GFX_DentaroUI::begin(M5GFX& _lcd, int _colBit, int _rotateNo, bool
     _lcd.setRotation(_rotateNo);
 }
 
-inline void M5GFX_DentaroUI::drawPngFile(M5Canvas sprite, fs::SPIFFSFS* _SPIFFS,const char * _path, int32_t _x, int32_t _y){
-  // sprite.drawPngFile(_SPIFFS, _path, _x, _y);
+inline void M5GFX_DentaroUI::drawPngFile(M5Canvas sprite, fs::LittleFSFS* _LittleFS,const char * _path, int32_t _x, int32_t _y){
+  // sprite.drawPngFile(_LittleFS, _path, _x, _y);
 }
 
 //---MAP用関数

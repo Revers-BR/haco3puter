@@ -2,7 +2,7 @@
 #define EDITOR_H
 
 #include <Arduino.h>
-#include "SPIFFS.h"
+#include "LittleFS.h"
 
 #include <FS.h>
 #include <regex>
@@ -12,7 +12,6 @@
 #include <regex>
 // #include <PS2Keyboard.h>
 
-#define FORMAT_SPIFFS_IF_FAILED false
 #define KILO_VERSION "0.0.1"
 #define KILO_TAB_STOP 2
 #define ABUF_INIT {NULL, 0}
